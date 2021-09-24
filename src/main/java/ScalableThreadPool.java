@@ -38,8 +38,6 @@ public class ScalableThreadPool implements ThreadPool {
 
     };
 
-
-
     @Override
     public void start(){
         for (Thread thr : currentThreads)
@@ -118,6 +116,7 @@ public class ScalableThreadPool implements ThreadPool {
 
                 if (task != null) {
                     task.run();
+
                     synchronized (monitorQueuetasksThreadsFree){
                         nThreadsFree += 1;
                     }
